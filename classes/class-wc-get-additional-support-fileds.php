@@ -1,9 +1,9 @@
 <?php
-/*
+/**
  * Followig class handling frontend inputs  
  * dependencies. Do not make changes in code
  * Create on: 5 November, 2019 
- */
+ **/
 
 class WCPS_AS_FIELDS{
 
@@ -12,7 +12,7 @@ class WCPS_AS_FIELDS{
 			 *
 			 * @access public
 			 * @param 
-		  */
+		  **/
 
 		 public  function __construct() {			    
 			    
@@ -23,9 +23,9 @@ class WCPS_AS_FIELDS{
 		 }	
 		 
 		 
-		 /*
+		 /**
 		   * creating create fields in single product page
-		  */
+		  **/
 		 function wcps_support_custom_field(){
 			 
 		   global $product;	 
@@ -159,9 +159,9 @@ class WCPS_AS_FIELDS{
 		
 		
 		 
-		 /*
+		 /**
 		   * creating add fields value in add to cart
-		  */
+		  **/
 		 function add_cart_item_data( $cart_item_data, $product_id, $variation_id ) {
 			
 			 if( ! empty( $_POST['wcps_up_sell_product_price'] )  ||  ! empty( $_POST['wcps_product_monthlyprice'] ) ) {
@@ -175,9 +175,9 @@ class WCPS_AS_FIELDS{
 			 return $cart_item_data;
 		}
 
-                         /*
+                         /**
 		   * calculating extra fields price in in cart
-		 */
+		 **/
 		function before_calculate_totals( $cart_obj ) {
 			 if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 			 return;
