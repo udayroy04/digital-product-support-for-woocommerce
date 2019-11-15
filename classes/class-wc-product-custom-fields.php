@@ -7,10 +7,7 @@ class WCPS_Product_Custom_Fields{
 			  
                                    add_action( 'add_attachment', 'wpse62481_set_default_meta_value' );	  			  
 		            add_action( 'woocommerce_product_options_general_product_data', array( $this, 'wcps_create_variation_fields') );
-			add_action( 'woocommerce_process_product_meta', array( $this, 'wcps_save_variation_fields') );
-			
-			add_action( 'woocommerce_product_options_general_product_data', array( $this, 'wcps_create_upsell_service_fields') );
-			add_action( 'woocommerce_process_product_meta', array( $this, 'wcps_save_upsell_service_fields') );
+			add_action( 'woocommerce_process_product_meta', array( $this, 'wcps_save_variation_fields') );			
 		
 		    }	
 		 	
@@ -27,7 +24,7 @@ class WCPS_Product_Custom_Fields{
 
 
 				        ?>
-				        <div id="wcps_meta_inner">
+				    <div id="wcps_meta_inner">
 				        <?php
 				 
 				        //get the saved meta as an array
@@ -53,7 +50,7 @@ class WCPS_Product_Custom_Fields{
 
 				        ?>
 				        <span id="here"></span>
-				         <div class="row-dynamic-support-fields" style="border-bottom: 1px solid #e5e5e5;"><p><input class="button tagadd add" type="button" value="<?php _e('Add Supported Product & Price Field'); ?>"></p></div>
+				         <div class="row-dynamic-support-fields" style="border-bottom: 1px solid #e5e5e5;"><p><input class="button tagadd add" type="button" value="<?php _e('Add Support Price Field'); ?>"></p></div>
 				         
 				         <style type="text/css">
 				         .remove{
@@ -166,9 +163,10 @@ class WCPS_Product_Custom_Fields{
 					
 				</tr>
 				<?php
-				}				
+					}
 				
-				 endif; ?>
+				
+				<?php endif; ?>
 
 				<!-- empty hidden one for jQuery -->
 				<tr class="empty-row screen-reader-text">
@@ -181,7 +179,7 @@ class WCPS_Product_Custom_Fields{
 				</tbody>
 				</table>
 
-				<p><a id="add-row" class="button" href="#">Add UP Sell Product & Price Field</a></p>
+				<p><a id="add-row" class="button" href="#">Add UP Sell Product</a></p>
 				
 					        
 				        
@@ -214,7 +212,7 @@ class WCPS_Product_Custom_Fields{
                                                     
 				
 				   
-				   $support = esc_html($_POST['support']);
+				   $support = $_POST['support'];
 				   $support_price = 'allow';
 				   
 				   if ( !empty( $support) || ! isset( $_POST['support'] ) ){
@@ -234,8 +232,8 @@ class WCPS_Product_Custom_Fields{
 					return;
 				$old = get_post_meta($post_id, '_wcps_up_sell_product_field', true);
 				$new = array();
-				$names = sanitize_text_field($_POST['name']);
-				$price = floatval($_POST['price']);
+				$names = $_POST['name'];
+				$price = $_POST['price'];
 				$count = count( $names );
 				for ( $i = 0; $i < $count; $i++ ) {
 					if ( $names[$i] != '' ){
