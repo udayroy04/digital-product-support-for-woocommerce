@@ -166,19 +166,9 @@ class WCPS_Product_Custom_Fields{
 					
 				</tr>
 				<?php
-					}
-				else :
-					// show a blank one
-			?>
-				<tr>
-					
-					<td><input type="text" class="widefat" name="name[]" value="" /></td>
-					<td><input type="text" class="widefat" name="price[]" value="" /></td>
-					<td><a class="button remove-row" href="#">-</a></td>
-		                        	
-					
-				</tr>
-				<?php endif; ?>
+				}				
+				
+				 endif; ?>
 
 				<!-- empty hidden one for jQuery -->
 				<tr class="empty-row screen-reader-text">
