@@ -1,8 +1,4 @@
 <?php
-/**
- * This class handling all inputs control and their 
- * Create on: 5 November, 2019 
- **/
 class WCPS_Product_Custom_Fields{
 
 		      /**
