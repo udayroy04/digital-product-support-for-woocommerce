@@ -1,9 +1,9 @@
 <?php
-/*
+/**
  * Followig class handling all inputs control and their 
  * dependencies. Do not make changes in code
  * Create on: 5 November, 2019 
- */
+ **/
 class WCPS_Product_Custom_Fields{
 
 		      /**
@@ -11,7 +11,7 @@ class WCPS_Product_Custom_Fields{
 			 *
 			 * @access public
 			 * @param 
-		      */
+		      **/
 
 		    public function __construct() {
 			  
@@ -21,9 +21,9 @@ class WCPS_Product_Custom_Fields{
 		
 		    }	
 		 
-		   /*
+		   /**
 		    * creating fields inside this plugin
-		   */
+		   **/
 		    function wcps_create_variation_fields(){		       
 				    
 				    global $post;			    
@@ -136,12 +136,7 @@ class WCPS_Product_Custom_Fields{
 					$(this).parents('tr').remove();
 					return false;
 				});
-				/* $('#repeatable-fieldset-one tbody').sortable({
-					opacity: 0.6,
-					revert: true,
-					cursor: 'move',
-					handle: '.sort'
-				}); */
+				
 			});
 				</script>
                                                
@@ -206,9 +201,9 @@ class WCPS_Product_Custom_Fields{
 
 <?php    }
 		     
-		     /*
+		     /**
 		    * creating save fields inside this plugin
-		   */
+		   **/
 		     function wcps_save_variation_fields( $post_id ) {		     
 				  				
                                                 // save product support services custom field data 
