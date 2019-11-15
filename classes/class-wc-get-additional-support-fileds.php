@@ -1,7 +1,6 @@
 <?php
 /**
- * Followig class handling frontend inputs  
- * dependencies. Do not make changes in code
+ * This class handling frontend inputs  
  * Create on: 5 November, 2019 
  **/
 
