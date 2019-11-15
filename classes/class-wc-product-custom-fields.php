@@ -1,16 +1,29 @@
 <?php
+/*
+ * Followig class handling all inputs control and their 
+ * dependencies. Do not make changes in code
+ * Create on: 5 November, 2019 
+ */
 class WCPS_Product_Custom_Fields{
 
-                       
+		      /**
+			 * __construct function.
+			 *
+			 * @access public
+			 * @param 
+		      */
 
-		    function __construct() {
+		    public function __construct() {
 			  
                                    add_action( 'add_attachment', 'wpse62481_set_default_meta_value' );	  			  
 		            add_action( 'woocommerce_product_options_general_product_data', array( $this, 'wcps_create_variation_fields') );
 			add_action( 'woocommerce_process_product_meta', array( $this, 'wcps_save_variation_fields') );			
 		
 		    }	
-		 	
+		 
+		   /*
+		    * creating fields inside this plugin
+		   */
 		    function wcps_create_variation_fields(){		       
 				    
 				    global $post;			    
@@ -193,7 +206,9 @@ class WCPS_Product_Custom_Fields{
 
 <?php    }
 		     
-		     
+		     /*
+		    * creating save fields inside this plugin
+		   */
 		     function wcps_save_variation_fields( $post_id ) {		     
 				  				
                                                 // save product support services custom field data 
