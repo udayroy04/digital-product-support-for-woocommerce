@@ -1,9 +1,4 @@
 <?php
-/**
- * This class handling frontend inputs  
- * Create on: 5 November, 2019 
- **/
-
 class WCPS_AS_FIELDS{
 
                        /**
