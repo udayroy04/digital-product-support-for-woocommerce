@@ -228,12 +228,18 @@ class WCPS_Product_Custom_Fields{
 				   
 				  // save upsell custom field data 
 				   if ( ! isset( $_POST['repeatable_meta_box_nonce'] ) ||
-					! wp_verify_nonce( $_POST['repeatable_meta_box_nonce'], 'repeatable_meta_box_nonce' ) )
+					! wp_verify_nonce( $_POST['repeatable_meta_box_nonce'], 'repeatable_meta_box_nonce' ) ){					
 					return;
-				if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+				}
+				
+				if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){					
 					return;
-				if (!current_user_can('edit_post', $post_id))
+				}
+				
+				if (!current_user_can('edit_post', $post_id)){					
 					return;
+				}	
+					
 				$old = get_post_meta($post_id, '_wcps_up_sell_product_field', true);
 				$new = array();
 				$names = $_POST['name'];
