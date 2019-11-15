@@ -28,7 +28,7 @@ class WCPS_Product_Custom_Fields{
 				        <?php
 				 
 				        //get the saved meta as an array
-				       $support = get_post_meta($post->ID,'support',true);				       
+				       $support = get_post_meta($post->ID, 'support', true);				       
 
 				       $c = 0;
 				       
@@ -41,7 +41,7 @@ class WCPS_Product_Custom_Fields{
 						        printf( '		        		
 						        <p class="form-field support-month-field">
 						        <label>Support Services</label><input type="text" name="support[%1$s][month]" value="%2$s"  placeholder="Enter Month Duration"  /><span class="wcps-currency-symbol">%5$s</span><input type="text" name="support[%1$s][support_price]" value="%3$s" placeholder="Enter Support Price" /> <span class="remove">%4$s</span>					    							 
-						        </p>', $c, $track['month'], $track['support_price'], __( 'Remove' ),$currency );
+						        </p>', $c, $track['month'], $track['support_price'], __( 'Remove' ), $currency );
 						        $c = $c +1;
 						    }
 						}
@@ -222,8 +222,8 @@ class WCPS_Product_Custom_Fields{
 				   $support_price = 'allow';
 				   
 				   if ( !empty( $support) || ! isset( $_POST['support'] ) ){
-				   update_post_meta($post_id,'support',$support);
-				   update_post_meta($post_id,'support_price',$support_price);
+				   update_post_meta($post_id, 'support', $support);
+				   update_post_meta($post_id, 'support_price', $support_price);
 				   }  
 				   
 				  
