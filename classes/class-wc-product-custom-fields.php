@@ -196,10 +196,8 @@ class WCPS_Product_Custom_Fields{
 <?php    }
 		     
 		     
-		     function wcps_save_variation_fields( $post_id ) {
-			     
-				  global $meta_box, $meta_box_video, $meta_box_video_page, $meta_box_product_tabs, $meta_deployments, $meta_features, $meta_downloads;
-				
+		     function wcps_save_variation_fields( $post_id ) {		     
+				  				
                                                 // save product support services custom field data 
 				// verify nonce
 				    if (!wp_verify_nonce($_POST['tz_meta_box_nonce'], basename(__FILE__))) {
