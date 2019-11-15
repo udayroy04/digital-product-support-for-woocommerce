@@ -154,9 +154,9 @@ class WCPS_Product_Custom_Fields{
 			?>
 				<tr>
 					
-					<td><input type="text" class="widefat" name="name[]" value="<?php if($field['name'] != '') echo esc_attr( $field['name'] ); ?>" /></td>
+					<td><input type="text" class="widefat" name="name[]" value="<?php if( $field['name'] != '' ){  echo esc_attr( $field['name'] );  } ?>" /></td>
 
-					<td><?php  echo '&nbsp; '.$currency; ?>&nbsp;<input type="text" class="widefat" name="price[]" value="<?php if ($field['price'] != '') echo esc_attr( $field['price'] );  ?>" /></td>
+					<td><?php  echo '&nbsp; '.$currency; ?>&nbsp;<input type="text" class="widefat" name="price[]" value="<?php if ( $field['price'] != '' ){  echo esc_attr( $field['price'] );  }  ?>" /></td>
 					<td><a class="button remove-row" href="#">remove</a></td>			
 					
 				</tr>
@@ -198,19 +198,19 @@ class WCPS_Product_Custom_Fields{
 				  				
                                                 // save product support services custom field data 
 				// verify nonce
-				    if (!wp_verify_nonce($_POST['tz_meta_box_nonce'], basename(__FILE__))) {
+				    if ( !wp_verify_nonce( $_POST['tz_meta_box_nonce'], basename(__FILE__) ) ) {
 				        return $post_id;
 				    }
 				    // check autosave
-				    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+				    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 				        return $post_id;
 				    }
 				    // check permissions
-				    if ('page' == $_POST['post_type']) {
+				    if ( 'page' == $_POST['post_type'] ) {
 				        if (!current_user_can('edit_page', $post_id)) {
 					return $post_id;
 				        }
-				    } elseif (!current_user_can('edit_post', $post_id)) {
+				    } elseif ( !current_user_can( 'edit_post', $post_id ) ) {
 				        return $post_id;
 				    }
                                                     
@@ -232,11 +232,11 @@ class WCPS_Product_Custom_Fields{
 					return;
 				}
 				
-				if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){					
+				if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ){					
 					return;
 				}
 				
-				if (!current_user_can('edit_post', $post_id)){					
+				if ( !current_user_can( 'edit_post', $post_id ) ){					
 					return;
 				}	
 					
