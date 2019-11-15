@@ -1,9 +1,20 @@
 <?php
+/*
+ * Followig class handling frontend inputs  
+ * dependencies. Do not make changes in code
+ * Create on: 5 November, 2019 
+ */
+
 class WCPS_AS_FIELDS{
 
-                       
+                       /**
+			 * __construct function.
+			 *
+			 * @access public
+			 * @param 
+		  */
 
-		 function __construct() {			    
+		 public  function __construct() {			    
 			    
 			add_action('woocommerce_before_add_to_cart_button', array( $this, 'wcps_support_custom_field') );   			
 		           add_filter( 'woocommerce_add_cart_item_data', array( $this, 'add_cart_item_data'), 58, 3 );
@@ -12,7 +23,9 @@ class WCPS_AS_FIELDS{
 		 }	
 		 
 		 
-		
+		 /*
+		   * creating create fields in single product page
+		  */
 		 function wcps_support_custom_field(){
 			 
 		   global $product;	 
@@ -146,7 +159,9 @@ class WCPS_AS_FIELDS{
 		
 		
 		 
-		 
+		 /*
+		   * creating add fields value in add to cart
+		  */
 		 function add_cart_item_data( $cart_item_data, $product_id, $variation_id ) {
 			
 			 if( ! empty( $_POST['wcps_up_sell_product_price'] )  ||  ! empty( $_POST['wcps_product_monthlyprice'] ) ) {
@@ -160,7 +175,10 @@ class WCPS_AS_FIELDS{
 			 return $cart_item_data;
 		}
 
-                        function before_calculate_totals( $cart_obj ) {
+                         /*
+		   * calculating extra fields price in in cart
+		 */
+		function before_calculate_totals( $cart_obj ) {
 			 if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 			 return;
 			 }
