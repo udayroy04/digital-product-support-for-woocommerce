@@ -13,10 +13,8 @@ class WCPS_Product_Custom_Fields{
 		 	
 		    function wcps_create_variation_fields(){		       
 				    
-				    global $custom_downloads, $post;
-				    
-				    global $woocommerce;
-				   $currency = get_woocommerce_currency_symbol();
+				    global $post;			    
+				    $currency = get_woocommerce_currency_symbol();
 				    
 				        // product support services
 				        // Use nonce for verification
@@ -30,7 +28,7 @@ class WCPS_Product_Custom_Fields{
 				        //get the saved meta as an array
 				       $support = get_post_meta($post->ID, 'support', true);				       
 
-				       $c = 0;
+				       $count = 0;
 				       
 				       if (!empty($support)) :
 				       if ( count( $support ) > 0 ) {
@@ -41,8 +39,8 @@ class WCPS_Product_Custom_Fields{
 						        printf( '		        		
 						        <p class="form-field support-month-field">
 						        <label>Support Services</label><input type="text" name="support[%1$s][month]" value="%2$s"  placeholder="Enter Month Duration"  /><span class="wcps-currency-symbol">%5$s</span><input type="text" name="support[%1$s][support_price]" value="%3$s" placeholder="Enter Support Price" /> <span class="remove">%4$s</span>					    							 
-						        </p>', $c, $track['month'], $track['support_price'], __( 'Remove' ), $currency );
-						        $c = $c +1;
+						        </p>', $count, $track['month'], $track['support_price'], __( 'Remove' ), $currency );
+						        $count = $count +1;
 						    }
 						}
 					        }
@@ -88,7 +86,7 @@ class WCPS_Product_Custom_Fields{
 				        <script>
 				        var $ =jQuery.noConflict();
 				        $(document).ready(function() {
-				        var count = <?php echo $c; ?>;
+				        var count = <?php echo $count; ?>;
 				        $(".add").click(function() {
 				        count = count + 1;
 
@@ -109,7 +107,7 @@ class WCPS_Product_Custom_Fields{
 				
 				// upsell product      
 				
-				$_wcps_up_sell_product_field = get_post_meta($post->ID, '_wcps_up_sell_product_field', true);
+				$_wcps_up_sell_p_field = get_post_meta($post->ID, '_wcps_up_sell_product_field', true);
 				wp_nonce_field( 'repeatable_meta_box_nonce', 'repeatable_meta_box_nonce' );
 			?>
 				<script type="text/javascript">
@@ -151,8 +149,8 @@ class WCPS_Product_Custom_Fields{
 				</thead>
 				<tbody>
 				<?php
-				if ( $_wcps_up_sell_product_field ) :
-					foreach ( $_wcps_up_sell_product_field as $field ) {
+				if ( $_wcps_up_sell_p_field ) :
+					foreach ( $_wcps_up_sell_p_field as $field ) {
 			?>
 				<tr>
 					
