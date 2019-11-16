@@ -6,7 +6,8 @@ if ( !defined( 'ABSPATH' ) ) {
  * Custom field in frontend
  *
  * @since      1.0.0
- * @package    WCPS_AS_FIELDS
+ * @package   WCPS_AS_FIELDS
+ * @author     Israr
  */ 
 class WCPS_AS_FIELDS{
 
