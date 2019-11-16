@@ -7,7 +7,7 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  * @since      1.0.0
  * @package   WCPS_AS_FIELDS
- * @author     Israr
+ * @author     Israr <israr@daffodilglobal.com>
  */ 
 class WCPS_AS_FIELDS{
 
