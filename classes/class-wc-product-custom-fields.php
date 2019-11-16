@@ -7,7 +7,7 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  * @since      1.0.0
  * @package    WCPS_Product_Custom_Fields
-  * @author     Israr
+  * @author     Israr <israr@daffodilglobal.com>
  */
 class WCPS_Product_Custom_Fields{
 
