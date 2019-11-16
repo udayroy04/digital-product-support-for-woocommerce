@@ -12,13 +12,7 @@ class WCPS_Product_Custom_Fields{
 		
 		    }	
 		 
-		 /**
-		 *  Creating fields inside this plugin
-		 * 
-		 *
-		 * @since    1.0.0
-		 * @access   public
-	             */		    
+			    
 		public  function wcps_create_variation_fields(){		       
 				    
 				    global $post;			    
@@ -196,13 +190,7 @@ class WCPS_Product_Custom_Fields{
 
 <?php    }
 		     
-		 /**
-		 *  Creating save fields inside this plugin
-		 * 
-		 *
-		 * @since    1.0.0
-		 * @access   public
-	             */		    
+			    
 		 public  function wcps_save_variation_fields( $post_id ) {		     
 				  				
                                                 // save product support services custom field data 
@@ -277,10 +265,7 @@ class WCPS_Product_Custom_Fields{
 								    
 		     }
 		     
-		     
-		
-		       
-		    
+		   
 }
 
 $wcps_product_custom_fields = new WCPS_Product_Custom_Fields();
