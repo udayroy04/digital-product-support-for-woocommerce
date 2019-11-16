@@ -4,12 +4,6 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 class WCPS_Product_Custom_Fields{
 
-		      /**
-			 * __construct function.
-			 *
-			 * @access public
-			 * @since   1.0.0
-		      */
 		      public function __construct() {
 			  
                                    add_action( 'add_attachment', 'wpse62481_set_default_meta_value' );	  			  
