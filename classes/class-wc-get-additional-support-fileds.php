@@ -4,12 +4,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 class WCPS_AS_FIELDS{
 
-                       /**
-		 * __construct function.
-		 *
-		* @access public
-		* @since  1.0.0
-		  */
+                    
 		  public  function __construct() {			    
 			    
 			add_action('woocommerce_before_add_to_cart_button', array( $this, 'wcps_support_custom_field') );   			
