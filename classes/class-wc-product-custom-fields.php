@@ -1,14 +1,22 @@
 <?php
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+/**
+ * Custom field in backend
+ *
+ * @since      1.0.0
+ * @package    WCPS_Product_Custom_Fields
+ */
 class WCPS_Product_Custom_Fields{
 
 		      /**
 			 * __construct function.
 			 *
 			 * @access public
-			 * @param 
-		      **/
-
-		    public function __construct() {
+			 * @since   1.0.0
+		      */
+		      public function __construct() {
 			  
                                    add_action( 'add_attachment', 'wpse62481_set_default_meta_value' );	  			  
 		            add_action( 'woocommerce_product_options_general_product_data', array( $this, 'wcps_create_variation_fields') );
@@ -16,10 +24,14 @@ class WCPS_Product_Custom_Fields{
 		
 		    }	
 		 
-		   /**
-		    * creating fields inside this plugin
-		   **/
-		    function wcps_create_variation_fields(){		       
+		 /**
+		 *  Creating fields inside this plugin
+		 * 
+		 *
+		 * @since    1.0.0
+		 * @access   public
+	             */		    
+		public  function wcps_create_variation_fields(){		       
 				    
 				    global $post;			    
 				    $currency = get_woocommerce_currency_symbol();
@@ -196,10 +208,14 @@ class WCPS_Product_Custom_Fields{
 
 <?php    }
 		     
-		     /**
-		    * creating save fields inside this plugin
-		   **/
-		     function wcps_save_variation_fields( $post_id ) {		     
+		 /**
+		 *  Creating save fields inside this plugin
+		 * 
+		 *
+		 * @since    1.0.0
+		 * @access   public
+	             */		    
+		 public  function wcps_save_variation_fields( $post_id ) {		     
 				  				
                                                 // save product support services custom field data 
 				// verify nonce
