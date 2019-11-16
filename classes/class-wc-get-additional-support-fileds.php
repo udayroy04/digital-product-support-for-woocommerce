@@ -1,14 +1,22 @@
 <?php
+if ( !defined( 'ABSPATH' ) ) {
+    exit;
+}
+/**
+ * Custom field in frontend
+ *
+ * @since      1.0.0
+ * @package    WCPS_AS_FIELDS
+ */ 
 class WCPS_AS_FIELDS{
 
                        /**
-			 * __construct function.
-			 *
-			 * @access public
-			 * @param 
-		  **/
-
-		 public  function __construct() {			    
+		 * __construct function.
+		 *
+		* @access public
+		* @since  1.0.0
+		  */
+		  public  function __construct() {			    
 			    
 			add_action('woocommerce_before_add_to_cart_button', array( $this, 'wcps_support_custom_field') );   			
 		           add_filter( 'woocommerce_add_cart_item_data', array( $this, 'add_cart_item_data'), 58, 3 );
@@ -18,9 +26,13 @@ class WCPS_AS_FIELDS{
 		 
 		 
 		 /**
-		   * creating create fields in single product page
-		  **/
-		 function wcps_support_custom_field(){
+		 *  Creating create fields in single product page of the plugin.
+		 * 
+		 *
+		 * @since    1.0.0
+		 * @access   public
+	             */
+		 public function wcps_support_custom_field(){
 			 
 		   global $product;	 
 		   
@@ -152,11 +164,14 @@ class WCPS_AS_FIELDS{
 		
 		
 		
-		 
 		 /**
-		   * creating add fields value in add to cart
-		  **/
-		 function add_cart_item_data( $cart_item_data, $product_id, $variation_id ) {
+		 *  Creating add fields value in add to cart.
+		 * 
+		 *
+		 * @since    1.0.0
+		 * @access   public
+	             */		 
+		 public function add_cart_item_data( $cart_item_data, $product_id, $variation_id ) {
 			
 			 if( ! empty( $_POST['wcps_up_sell_product_price'] )  ||  ! empty( $_POST['wcps_product_monthlyprice'] ) ) {
 			
@@ -170,9 +185,13 @@ class WCPS_AS_FIELDS{
 		}
 
                          /**
-		   * calculating extra fields price in in cart
-		 **/
-		function before_calculate_totals( $cart_obj ) {
+		 *  Calculating extra fields price in in cart
+		 * 
+		 *
+		 * @since    1.0.0
+		 * @access   public
+	             */		
+		public function before_calculate_totals( $cart_obj ) {
 			 if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 			 return;
 			 }
@@ -191,7 +210,3 @@ class WCPS_AS_FIELDS{
 }
 
 $wcps_as_fields = new WCPS_AS_FIELDS();
-	
-
-
-
