@@ -14,13 +14,7 @@ class WCPS_AS_FIELDS{
 		 }	
 		 
 		 
-		 /**
-		 *  Creating create fields in single product page of the plugin.
-		 * 
-		 *
-		 * @since    1.0.0
-		 * @access   public
-	             */
+		
 		 public function wcps_support_custom_field(){
 			 
 		   global $product;	 
@@ -151,15 +145,7 @@ class WCPS_AS_FIELDS{
 		 
 		 
 		
-		
-		
-		 /**
-		 *  Creating add fields value in add to cart.
-		 * 
-		 *
-		 * @since    1.0.0
-		 * @access   public
-	             */		 
+				 
 		 public function add_cart_item_data( $cart_item_data, $product_id, $variation_id ) {
 			
 			 if( ! empty( $_POST['wcps_up_sell_product_price'] )  ||  ! empty( $_POST['wcps_product_monthlyprice'] ) ) {
@@ -173,13 +159,7 @@ class WCPS_AS_FIELDS{
 			 return $cart_item_data;
 		}
 
-                         /**
-		 *  Calculating extra fields price in in cart
-		 * 
-		 *
-		 * @since    1.0.0
-		 * @access   public
-	             */		
+                       		
 		public function before_calculate_totals( $cart_obj ) {
 			 if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
 			 return;
