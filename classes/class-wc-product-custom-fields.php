@@ -5,11 +5,11 @@ if ( !defined( 'ABSPATH' ) ) {
 /**
  * Custom field in backend
  *
- * @package    WCPS_Product_Custom_Fields
+ * @package WCPS_Product_Custom_Fields
  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @link        http://www.daffodilglobal.com/
- * @since      1.0.0
-  * @author     Israr <israr@daffodilglobal.com>
+ * @link http://www.daffodilglobal.com/
+ * @since 1.0.0
+  * @author  Israr <israr@daffodilglobal.com>
  */
 class WCPS_Product_Custom_Fields{
 
