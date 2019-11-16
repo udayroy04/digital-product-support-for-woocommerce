@@ -2,15 +2,6 @@
 if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
-/**
- * Custom field in frontend
- *
- * @package   WCPS_AS_FIELDS
-  * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
- * @link        http://www.daffodilglobal.com/
- * @since      1.0.0
- * @author     Israr <israr@daffodilglobal.com>
- */ 
 class WCPS_AS_FIELDS{
 
                        /**
