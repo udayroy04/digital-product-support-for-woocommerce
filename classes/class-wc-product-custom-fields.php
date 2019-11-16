@@ -7,6 +7,7 @@ if ( !defined( 'ABSPATH' ) ) {
  *
  * @since      1.0.0
  * @package    WCPS_Product_Custom_Fields
+  * @author     Israr
  */
 class WCPS_Product_Custom_Fields{
 
