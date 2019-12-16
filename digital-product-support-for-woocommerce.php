@@ -32,12 +32,25 @@ if ( ! class_exists( 'WC_Product_Support' ) ) :
 			           
                                                 $this->version = '1.0';		
 
-                                              //   include(plugin_dir_path(__FILE__) . 'classes/class-wc-get-digital-goods.php');    
+                                               // inlcude code for creating custom field in admin   
 				include(plugin_dir_path(__FILE__) . 'classes/class-wc-product-custom-fields.php');    
-				include(plugin_dir_path(__FILE__) . 'classes/class-wc-get-additional-support-fileds.php');   
-				 add_action( 'admin_notices', array($this,'wc_ps_plugin_activation') ); 				
-				 add_action('wp_enqueue_scripts', array($this, 'wc_ps_load_plugin_styles_scripts'));				
+				
+				 // inlcude code for showing custom field in frontend   
+				include(plugin_dir_path(__FILE__) . 'classes/class-wc-frontend-additional-support-fileds.php');   
+				
+				// admin notic hook
+				 add_action( 'admin_notices', array($this,'wc_ps_plugin_activation') ); 		
+
+				 // include style
+				 add_action( 'wp_enqueue_scripts', array( $this, 'wc_ps_load_plugin_styles_scripts' ) );	
+				 
+				 // include script
+				 add_action( 'admin_enqueue_scripts',  array( $this, 'dps_wc_load_scripts') );
+				 
+				 // plugin activation hook
 				 register_deactivation_hook( __FILE__, array( 'WC_Product_Support', 'plugin_deactivation' ) );	
+				 
+				 // text domain
 				 add_action ( 'init', array($this, 'dpsfwc_setup'));
 				
 			}
@@ -93,19 +106,20 @@ if ( ! class_exists( 'WC_Product_Support' ) ) :
 		                }
 		
 		
-			  public function wc_ps_load_plugin_styles_scripts() {
+			public function wc_ps_load_plugin_styles_scripts() {
 		
-				      wp_enqueue_style('wc_ps_styles_scripts', plugin_dir_url(__FILE__). 'assets/css/woocommerce-support.css');
-				      
-				       wp_enqueue_script('wc_ps_styles_scripts', plugin_dir_url(__FILE__). 'assets/js/wcps-ajax-add-to-cart.js');
-				         
+				      wp_enqueue_style('wc_ps_styles_scripts', plugin_dir_url(__FILE__). 'assets/css/woocommerce-support.css');					      
 				
 				  }
 				  
-			  
+			function dps_wc_load_scripts() {
+				
+				 wp_enqueue_script('dps_js_scripts', plugin_dir_url(__FILE__). 'assets/js/dpsf-wc.js');
+				 
+			}			
     
 		
-				function plugin_deactivation() {
+			function plugin_deactivation() {
 		 
 				           if( false == delete_option( 'digital_product_support_for_woocommerce' ) ) {  				          
 					 flush_rewrite_rules();				           
