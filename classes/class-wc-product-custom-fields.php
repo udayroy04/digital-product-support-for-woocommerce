@@ -32,7 +32,7 @@ class WCPS_Product_Custom_Fields{
 							
 				#repeatable-support-field.wpps-upsell .wcps-supporttable-subheading td{
 					 border-top: 1px solid #e5e5e5;
-					 padding: 8px 0px;					
+					 padding: 8px 0px; 					
 				}
 				p.form-field.support-month-field .wcps-currency-symbol{
 					margin-right:50px;
