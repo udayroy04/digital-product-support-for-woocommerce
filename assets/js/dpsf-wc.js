@@ -31,7 +31,7 @@ jQuery( document ).ready(function() {
 	     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {	
 		        jQuery("#support-proerrmsg").html("Digits Only").show().fadeOut(10000);
 			   return false;
-		    }
+		    } 
       });
 	     
        jQuery(".upsell-pro").keypress(function (e) {
